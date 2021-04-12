@@ -100,8 +100,14 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $x = DB::table('students')->where('roll', $request->roll)->delete();
+
+
+
+        $request->session()->flash('std_deleted', 'Student Deleted successfully !!');
+
+        return redirect()->back();
     }
 }

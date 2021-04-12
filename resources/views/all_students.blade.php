@@ -40,6 +40,14 @@
     <div class = "container">
     <div class = "card-body">
 
+
+    @if(Session::has('std_deleted'))
+
+      <div class = "alert alert-success">{{Session::get('std_deleted')}}</div>
+
+    @endif
+
+
     <table class="table table-dark table-striped">
 
 
@@ -65,7 +73,7 @@
           
             <a href="" class="btn btn-info">Details</a>
             <a href="/editStd/{{$s->roll}}" class="btn btn-warning">Edit</a>
-            <a href="" class="btn btn-danger">Delete</a>
+            <a href="/dltStd/{{$s->roll}}" class="btn btn-danger">Delete</a>
             
           </td>
         </tr>
