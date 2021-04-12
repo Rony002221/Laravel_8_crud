@@ -65,9 +65,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($roll)
     {
-        //
+        $x = DB::table('students')->where('roll', $roll)->first();
+        return view('show_students', ['showStd' => $x]);
     }
 
     /**
@@ -77,9 +78,20 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $x = DB::table('students')->where('roll', $request->roll)->update([
+            'roll' => $request->roll,
+            'name' => $request->name,
+            'section' => $request->sec,
+            'address' => $request->add,
+        ]);
+
+
+
+        $request->session()->flash('std_updated', 'Student Updated successfully !!');
+
+        return redirect()->back();
     }
 
     /**

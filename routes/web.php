@@ -19,3 +19,5 @@ use App\Http\Controllers\StudentController;
 Route::get('/', [StudentController::class, 'index'])->name('allStd');
 Route::get('/add_student', [StudentController::class, 'create']);
 Route::post('/add_student', [StudentController::class, 'store'])->name('addStd');
+Route::get('/editStd/{roll}', [StudentController::class, 'edit'])->name('editStd');
+Route::post('/update_std', [StudentController::class, 'update'])->name('updateStd');

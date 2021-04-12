@@ -63,9 +63,9 @@
           <td>{{$s->address}}</td>
           <td>
           
-            <button type="button" class="btn btn-info">Details</button>
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <a href="" class="btn btn-info">Details</a>
+            <a href="/editStd/{{$s->roll}}" class="btn btn-warning">Edit</a>
+            <a href="" class="btn btn-danger">Delete</a>
             
           </td>
         </tr>
